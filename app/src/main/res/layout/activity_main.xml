@@ -299,6 +299,7 @@
                 android:background="@color/keys_main_background_color"
                 android:padding="15dp"
                 android:text="="
+                android:onClick="equalButtonClicked"
                 android:textColor="@color/right_icon_color"
                 android:textSize="22sp" />
         </LinearLayout>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     TextView value1TextView;
@@ -17,10 +18,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       value1TextView=findViewById(R.id.value1);
-         value2TextView=findViewById(R.id.value2);
-         operationTextView=findViewById(R.id.operation);
-         resultTextView=findViewById(R.id.result);
+       value1TextView=(TextView) findViewById(R.id.value1);
+         value2TextView=(TextView)findViewById(R.id.value2);
+         operationTextView=(TextView)findViewById(R.id.operation);
+         resultTextView=(TextView)findViewById(R.id.result);
     }
 
 
@@ -124,15 +125,19 @@ if(value1TextView.getText()==""){    // check if the first field is empty
 
     public void addButtonClicked(View view){
         operationTextView.setText("+");
+        operation="+";
     }
     public void minusButtonClicked(View view){
         operationTextView.setText("-");
+        operation="-";
     }
     public void multiplyButtonClicked(View view){
         operationTextView.setText("x");
+        operation="x";
     }
     public void divideButtonClicked(View view){
         operationTextView.setText("/");
+        operation="/";
     }
     public  void acButtonClicked(View view){
         value1TextView.setText("");
@@ -142,5 +147,30 @@ if(value1TextView.getText()==""){    // check if the first field is empty
         value1InDouble=0;
         value2InDouble=0;
         resultInDouble=0;
+    }
+
+    public void equalButtonClicked(View view) {
+        if (value1TextView.getText() == "" || value2TextView.getText() == "" || operationTextView.getText() == "") {
+            Toast.makeText(getApplicationContext(), "there is empty Field !! ", Toast.LENGTH_SHORT).show();
+        } else {
+            value1InDouble=Double.parseDouble(value1TextView.getText()+"");
+            value2InDouble=Double.parseDouble(value2TextView.getText()+"");
+            if (operation == "+") {
+                resultInDouble = value1InDouble + value2InDouble;
+                resultTextView.setText(resultInDouble + "");
+            }
+            if (operation == "x") {
+                resultInDouble = value1InDouble * value2InDouble;
+                resultTextView.setText(resultInDouble + "");
+            }
+            if (operation == "-") {
+                resultInDouble = value1InDouble - value2InDouble;
+                resultTextView.setText(resultInDouble + "");
+            }
+            if (operation == "/") {
+                resultInDouble = value1InDouble / value2InDouble;
+                resultTextView.setText(resultInDouble + "");
+            }
+        }
     }
 }
