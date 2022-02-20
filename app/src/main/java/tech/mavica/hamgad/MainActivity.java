@@ -96,7 +96,6 @@ if(value1TextView.getText()==""){    // check if the first field is empty
     value2TextView.setText(value2TextView.getText()+"7");
 }
     }
-
     public  void btn8Clicked(View view){
         if(value1TextView.getText()==""){    // check if the first field is empty
             value1TextView.setText(value1TextView.getText()+"8");
@@ -106,7 +105,6 @@ if(value1TextView.getText()==""){    // check if the first field is empty
             value2TextView.setText(value2TextView.getText()+"8");
         }
     }
-
     public  void btn9Clicked(View view){
         if(value1TextView.getText()==""){    // check if the first field is empty
             value1TextView.setText(value1TextView.getText()+"9");
@@ -116,7 +114,15 @@ if(value1TextView.getText()==""){    // check if the first field is empty
             value2TextView.setText(value2TextView.getText()+"9");
         }
     }
-
+    public  void btn0Clicked(View view){
+        if(value1TextView.getText()==""){    // check if the first field is empty
+            value1TextView.setText(value1TextView.getText()+"0");
+        }else if(operationTextView.getText()==""){ // see if the number will be add in the first field or in the second field
+            value1TextView.setText(value1TextView.getText()+"0");
+        }else{ // if you reach for this statement so the equation will be like 5+ .. mean that the number will be add in the second field
+            value2TextView.setText(value2TextView.getText()+"0");
+        }
+    }
     /*
     *
     * * * * * * * * * * * * * * * * Operations Section * * * * * * * * * * * * * * * * * *
@@ -124,21 +130,234 @@ if(value1TextView.getText()==""){    // check if the first field is empty
      */
 
     public void addButtonClicked(View view){
-        operationTextView.setText("+");
-        operation="+";
+        {
+            if(value1TextView.getText()==""){ // see if the first value is entered or not
+                Toast.makeText(getApplicationContext(), "you must enter the first value !!", Toast.LENGTH_SHORT).show();
+            }
+            else if(value1TextView.getText()!=""&&operationTextView.getText()==""){ // if the first value is put but the operation not specified
+                operationTextView.setText("+");
+                operation = "+";
+            }
+            else if(value1TextView.getText()!=""&&operationTextView.getText()!=""&&value2TextView.getText()==""){
+                operationTextView.setText("+");
+                operation="+";
+            }
+            else if(operationTextView.getText()!=""&&value2TextView.getText()!=""){
+                if(operation=="+"){
+                    value1InDouble=Double.parseDouble(value1TextView.getText()+"");
+                    value2InDouble=Double.parseDouble(value2TextView.getText()+"");
+                    value1InDouble += value2InDouble;
+                    value2InDouble=0;
+                    value2TextView.setText("");
+                    value1TextView.setText(value1InDouble+"");
+                    operationTextView.setText("+");
+                    operation="+";
+                }else if(operation=="-"){
+                    value1InDouble=Double.parseDouble(value1TextView.getText()+"");
+                    value2InDouble=Double.parseDouble(value2TextView.getText()+"");
+                    value1InDouble -= value2InDouble;
+                    value2InDouble=0;
+                    value2TextView.setText("");
+                    value1TextView.setText(value1InDouble+"");
+                    operationTextView.setText("+");
+                    operation="+";
+                }else if(operation=="x"){
+                    value1InDouble=Double.parseDouble(value1TextView.getText()+"");
+                    value2InDouble=Double.parseDouble(value2TextView.getText()+"");
+                    value1InDouble *= value2InDouble;
+                    value2InDouble=0;
+                    value2TextView.setText("");
+                    value1TextView.setText(value1InDouble+"");
+                    operationTextView.setText("+");
+                    operation="+";
+                }else if(operation=="/"){
+                    value1InDouble=Double.parseDouble(value1TextView.getText()+"");
+                    value2InDouble=Double.parseDouble(value2TextView.getText()+"");
+                    value1InDouble /= value2InDouble;
+                    value2InDouble=0;
+                    value2TextView.setText("");
+                    value1TextView.setText(value1InDouble+"");
+                    operationTextView.setText("+");
+                    operation="+";
+                }
+            }
+            else{
+                Toast.makeText(getApplicationContext(), "you must enter the first value !!", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
+
+
     public void minusButtonClicked(View view){
-        operationTextView.setText("-");
-        operation="-";
+        if(value1TextView.getText()==""){ // see if the first value is entered or not
+          value1TextView.setText("-");  }
+        else if(value1TextView.getText()!=""&&operationTextView.getText()==""){ // if the first value is put but the operation not specified
+            operationTextView.setText("-");
+            operation = "-";
+        }
+        else if(value1TextView.getText()!=""&&operationTextView.getText()!=""&&value2TextView.getText()==""){
+            operationTextView.setText("-");
+            operation="-";
+        }
+        else if(operationTextView.getText()!=""&&value2TextView.getText()!=""){
+            if(operation=="+"){
+                value1InDouble=Double.parseDouble(value1TextView.getText()+"");
+                value2InDouble=Double.parseDouble(value2TextView.getText()+"");
+                value1InDouble += value2InDouble;
+                value2InDouble=0;
+                value2TextView.setText("");
+                value1TextView.setText(value1InDouble+"");
+                operationTextView.setText("-");
+                operation="-";
+            }else if(operation=="-"){
+                value1InDouble=Double.parseDouble(value1TextView.getText()+"");
+                value2InDouble=Double.parseDouble(value2TextView.getText()+"");
+                value1InDouble -= value2InDouble;
+                value2InDouble=0;
+                value2TextView.setText("");
+                value1TextView.setText(value1InDouble+"");
+                operationTextView.setText("-");
+                operation="-";
+            }else if(operation=="x"){
+                value1InDouble=Double.parseDouble(value1TextView.getText()+"");
+                value2InDouble=Double.parseDouble(value2TextView.getText()+"");
+                value1InDouble *= value2InDouble;
+                value2InDouble=0;
+                value2TextView.setText("");
+                value1TextView.setText(value1InDouble+"");
+                operationTextView.setText("-");
+                operation="-";
+            }else if(operation=="/"){
+                value1InDouble=Double.parseDouble(value1TextView.getText()+"");
+                value2InDouble=Double.parseDouble(value2TextView.getText()+"");
+                value1InDouble /= value2InDouble;
+                value2InDouble=0;
+                value2TextView.setText("");
+                value1TextView.setText(value1InDouble+"");
+                operationTextView.setText("-");
+                operation="-";
+            }
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "you must enter the first value !!", Toast.LENGTH_SHORT).show();
+        }
     }
+
+
     public void multiplyButtonClicked(View view){
-        operationTextView.setText("x");
-        operation="x";
+        if(value1TextView.getText()==""){ // see if the first value is entered or not
+            Toast.makeText(getApplicationContext(), "you must enter the first value !!", Toast.LENGTH_SHORT).show();
+        }
+        else if(value1TextView.getText()!=""&&operationTextView.getText()==""){ // if the first value is put but the operation not specified
+            operationTextView.setText("x");
+            operation = "x";
+        }
+        else if(value1TextView.getText()!=""&&operationTextView.getText()!=""&&value2TextView.getText()==""){
+            operationTextView.setText("x");
+            operation="x";
+        }
+        else if(operationTextView.getText()!=""&&value2TextView.getText()!=""){
+            if(operation=="+"){
+                value1InDouble=Double.parseDouble(value1TextView.getText()+"");
+                value2InDouble=Double.parseDouble(value2TextView.getText()+"");
+                value1InDouble += value2InDouble;
+                value2InDouble=0;
+                value2TextView.setText("");
+                value1TextView.setText(value1InDouble+"");
+                operationTextView.setText("x");
+                operation="x";
+            }else if(operation=="-"){
+                value1InDouble=Double.parseDouble(value1TextView.getText()+"");
+                value2InDouble=Double.parseDouble(value2TextView.getText()+"");
+                value1InDouble -= value2InDouble;
+                value2InDouble=0;
+                value2TextView.setText("");
+                value1TextView.setText(value1InDouble+"");
+                operationTextView.setText("x");
+                operation="x";
+            }else if(operation=="x"){
+                value1InDouble=Double.parseDouble(value1TextView.getText()+"");
+                value2InDouble=Double.parseDouble(value2TextView.getText()+"");
+                value1InDouble *= value2InDouble;
+                value2InDouble=0;
+                value2TextView.setText("");
+                value1TextView.setText(value1InDouble+"");
+                operationTextView.setText("x");
+                operation="x";
+            }else if(operation=="/"){
+                value1InDouble=Double.parseDouble(value1TextView.getText()+"");
+                value2InDouble=Double.parseDouble(value2TextView.getText()+"");
+                value1InDouble /= value2InDouble;
+                value2InDouble=0;
+                value2TextView.setText("");
+                value1TextView.setText(value1InDouble+"");
+                operationTextView.setText("x");
+                operation="x";
+            }
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "you must enter the first value !!", Toast.LENGTH_SHORT).show();
+        }
     }
+
+
     public void divideButtonClicked(View view){
-        operationTextView.setText("/");
-        operation="/";
+        if(value1TextView.getText()==""){ // see if the first value is entered or not
+            Toast.makeText(getApplicationContext(), "you must enter the first value !!", Toast.LENGTH_SHORT).show();
+        }
+        else if(value1TextView.getText()!=""&&operationTextView.getText()==""){ // if the first value is put but the operation not specified
+            operationTextView.setText("/");
+            operation = "/";
+        }
+        else if(value1TextView.getText()!=""&&operationTextView.getText()!=""&&value2TextView.getText()==""){
+            operationTextView.setText("/");
+            operation="/";
+        }
+        else if(operationTextView.getText()!=""&&value2TextView.getText()!=""){
+            if(operation=="+"){
+                value1InDouble=Double.parseDouble(value1TextView.getText()+"");
+                value2InDouble=Double.parseDouble(value2TextView.getText()+"");
+                value1InDouble += value2InDouble;
+                value2InDouble=0;
+                value2TextView.setText("");
+                value1TextView.setText(value1InDouble+"");
+                operationTextView.setText("/");
+                operation="/";
+            }else if(operation=="-"){
+                value1InDouble=Double.parseDouble(value1TextView.getText()+"");
+                value2InDouble=Double.parseDouble(value2TextView.getText()+"");
+                value1InDouble -= value2InDouble;
+                value2InDouble=0;
+                value2TextView.setText("");
+                value1TextView.setText(value1InDouble+"");
+                operationTextView.setText("/");
+                operation="/";
+            }else if(operation=="x"){
+                value1InDouble=Double.parseDouble(value1TextView.getText()+"");
+                value2InDouble=Double.parseDouble(value2TextView.getText()+"");
+                value1InDouble *= value2InDouble;
+                value2InDouble=0;
+                value2TextView.setText("");
+                value1TextView.setText(value1InDouble+"");
+                operationTextView.setText("/");
+                operation="/";
+            }else if(operation=="/"){
+                value1InDouble=Double.parseDouble(value1TextView.getText()+"");
+                value2InDouble=Double.parseDouble(value2TextView.getText()+"");
+                value1InDouble /= value2InDouble;
+                value2InDouble=0;
+                value2TextView.setText("");
+                value1TextView.setText(value1InDouble+"");
+                operationTextView.setText("/");
+                operation="/";
+            }
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "you must enter the first value !!", Toast.LENGTH_SHORT).show();
+        }
     }
+
+
     public  void acButtonClicked(View view){
         value1TextView.setText("");
         value2TextView.setText("");
@@ -155,7 +374,7 @@ if(value1TextView.getText()==""){    // check if the first field is empty
         } else {
             value1InDouble=Double.parseDouble(value1TextView.getText()+"");
             value2InDouble=Double.parseDouble(value2TextView.getText()+"");
-            if (operation == "+") {
+           if (operation == "+") {
                 resultInDouble = value1InDouble + value2InDouble;
                 resultTextView.setText(resultInDouble + "");
             }

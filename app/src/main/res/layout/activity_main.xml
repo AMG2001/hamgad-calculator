@@ -27,9 +27,9 @@
                 android:layout_margin="15dp"
                 android:layout_weight="1"
                 android:background="@color/keys_main_background_color"
+                android:onClick="acButtonClicked"
                 android:padding="15dp"
                 android:text="AC"
-                android:onClick="acButtonClicked"
                 android:textColor="@color/top_icon_color"
                 android:textSize="22sp" />
 
@@ -64,9 +64,9 @@
                 android:layout_margin="15dp"
                 android:layout_weight="1"
                 android:background="@color/keys_main_background_color"
+                android:onClick="divideButtonClicked"
                 android:padding="15dp"
                 android:text="/"
-                android:onClick="divideButtonClicked"
                 android:textColor="@color/right_icon_color"
                 android:textSize="22sp" />
         </LinearLayout>
@@ -83,9 +83,9 @@
                 android:layout_margin="15dp"
                 android:layout_weight="1"
                 android:background="@color/keys_main_background_color"
+                android:onClick="btn7Clicked"
                 android:padding="15dp"
                 android:text="7"
-                android:onClick="btn7Clicked"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
             <!--
@@ -97,9 +97,9 @@
                 android:layout_margin="15dp"
                 android:layout_weight="1"
                 android:background="@color/keys_main_background_color"
+                android:onClick="btn8Clicked"
                 android:padding="15dp"
                 android:text="8"
-                android:onClick="btn8Clicked"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
             <!--
@@ -111,9 +111,9 @@
                 android:layout_margin="15dp"
                 android:layout_weight="1"
                 android:background="@color/key_background_color"
+                android:onClick="btn9Clicked"
                 android:padding="15dp"
                 android:text="9"
-                android:onClick="btn9Clicked"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
             <!--
@@ -126,9 +126,9 @@
                 android:layout_margin="15dp"
                 android:layout_weight="1"
                 android:background="@color/keys_main_background_color"
+                android:onClick="multiplyButtonClicked"
                 android:padding="15dp"
                 android:text="x"
-                android:onClick="multiplyButtonClicked"
                 android:textColor="@color/right_icon_color"
                 android:textSize="22sp" />
         </LinearLayout>
@@ -145,9 +145,9 @@
                 android:layout_margin="15dp"
                 android:layout_weight="1"
                 android:background="@color/keys_main_background_color"
+                android:onClick="btn4Clicked"
                 android:padding="15dp"
                 android:text="4"
-                android:onClick="btn4Clicked"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
 
@@ -158,9 +158,9 @@
                 android:layout_margin="15dp"
                 android:layout_weight="1"
                 android:background="@color/keys_main_background_color"
+                android:onClick="btn5Clicked"
                 android:padding="15dp"
                 android:text="5"
-                android:onClick="btn5Clicked"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
 
@@ -171,9 +171,9 @@
                 android:layout_margin="15dp"
                 android:layout_weight="1"
                 android:background="@color/keys_main_background_color"
+                android:onClick="btn6Clicked"
                 android:padding="15dp"
                 android:text="6"
-                android:onClick="btn6Clicked"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
 
@@ -184,9 +184,9 @@
                 android:layout_margin="15dp"
                 android:layout_weight="1"
                 android:background="@color/keys_main_background_color"
+                android:onClick="minusButtonClicked"
                 android:padding="15dp"
                 android:text="__"
-                android:onClick="minusButtonClicked"
                 android:textColor="@color/right_icon_color"
                 android:textSize="22sp" />
         </LinearLayout>
@@ -203,9 +203,9 @@
                 android:layout_margin="15dp"
                 android:layout_weight="1"
                 android:background="@color/keys_main_background_color"
+                android:onClick="btn1Clicked"
                 android:padding="15dp"
                 android:text="1"
-                android:onClick="btn1Clicked"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
 
@@ -216,9 +216,9 @@
                 android:layout_margin="15dp"
                 android:layout_weight="1"
                 android:background="@color/keys_main_background_color"
+                android:onClick="btn2Clicked"
                 android:padding="15dp"
                 android:text="2"
-                android:onClick="btn2Clicked"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
 
@@ -229,9 +229,9 @@
                 android:layout_margin="15dp"
                 android:layout_weight="1"
                 android:background="@color/keys_main_background_color"
+                android:onClick="btn3Clicked"
                 android:padding="15dp"
                 android:text="3"
-                android:onClick="btn3Clicked"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
 
@@ -242,9 +242,9 @@
                 android:layout_margin="15dp"
                 android:layout_weight="1"
                 android:background="@color/keys_main_background_color"
+                android:onClick="addButtonClicked"
                 android:padding="15dp"
                 android:text="+"
-                android:onClick="addButtonClicked"
                 android:textColor="@color/right_icon_color"
                 android:textSize="22sp" />
         </LinearLayout>
@@ -275,6 +275,7 @@
                 android:background="@color/keys_main_background_color"
                 android:padding="15dp"
                 android:text="0"
+                android:onClick="btn0Clicked"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
 
@@ -297,20 +298,27 @@
                 android:layout_margin="15dp"
                 android:layout_weight="1"
                 android:background="@color/keys_main_background_color"
+                android:onClick="equalButtonClicked"
                 android:padding="15dp"
                 android:text="="
-                android:onClick="equalButtonClicked"
                 android:textColor="@color/right_icon_color"
                 android:textSize="22sp" />
         </LinearLayout>
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_margin="24dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:padding="25dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="64dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -353,14 +361,17 @@
             android:id="@+id/result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:singleLine="true"
             android:textColor="@color/white"
-            android:textSize="62sp"
+            android:textSize="50sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.928"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
